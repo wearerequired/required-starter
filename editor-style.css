@@ -1,0 +1,11 @@
+/*
+Theme Name: required+ Starter
+Description: Used to style the TinyMCE editor.
+*/
+
+/*
+    Load the Google Fonts Daddy, we want them in our Editor!
+ */
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,600);
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; font-weight: 300; }
