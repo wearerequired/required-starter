@@ -141,11 +141,11 @@ function required_continue_reading_link() {
  * @param  array $args default args
  * @return array       your args
  */
-function required_obrit_script_args( $defaults ) {
+function required_orbit_script_args( $defaults ) {
 	$args = array(
 		'animation' 	=> 'fade',
 		'advanceSpeed' 	=> 8000,
 	);
 	return wp_parse_args( $args, $defaults );
 }
-add_filter( 'req_obrit_script_args', 'required_obrit_script_args' );
+add_filter( 'req_orbit_script_args', 'required_orbit_script_args' );
