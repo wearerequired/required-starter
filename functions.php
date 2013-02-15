@@ -20,6 +20,7 @@ function required_starter_themesetup() {
 }
 add_action( 'after_setup_theme', 'required_starter_themesetup' );
 
+
 /**
  * With the following function you can disable theme features
  * used by the parent theme without breaking anything. Read the
