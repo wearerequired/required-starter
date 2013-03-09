@@ -7,7 +7,7 @@
  */
 function required_starter_themesetup() {
 
-	load_child_theme_textdomain( 'requiredstarter', get_template_directory() . '/languages' );
+	load_child_theme_textdomain( 'requiredstarter', get_stylesheet_directory() . '/languages' );
 
 	// Register an additional Menu Location
 	register_nav_menus( array(
