@@ -6,15 +6,19 @@ Author URI: http://required.ch/
 Description: Starter child theme for the required+ Foundation parent theme.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.0.2
+Version: 1.1.0-wip
 Template: required-foundation
 Text Domain: requiredstarter
 */
 
 /*
 	Make the template work
+
+    ATTENTION: Choose from CSS[1] or SCSS[2]
+    [1] @import url(../required-foundation/style.css);
+    [2] @import url(stylesheets/app.css);
 */
-@import url(../required-foundation/style.css);
+@import url(stylesheets/app.css);
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; font-weight: 300; }
 
