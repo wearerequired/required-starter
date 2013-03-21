@@ -82,27 +82,12 @@ function required_starter_scripts() {
 	 * it's empty by default.
 	 */
 	wp_enqueue_script(
-		'child-theme-js',
+		'child-theme',
 		get_stylesheet_directory_uri() . '/javascripts/child-theme.js',
-		array( 'theme-js' ),
+		array( 'theme' ),
 		required_get_theme_version( false ),
 		true
 	);
-
-	/**
-	 * Registers the app.css
-	 *
-	 * If you don't need it, remove it.
-	 * The file is empty by default.
-	 */
-	wp_register_style(
-        'app-css', //handle
-        get_stylesheet_directory_uri() . '/stylesheets/app.css',
-        array( 'foundation-css' ),	// needs foundation
-        required_get_theme_version( false ) //version
-  	);
-  	wp_enqueue_style( 'app-css' );
-
 	/**
 	 * Adding google fonts
 	 *

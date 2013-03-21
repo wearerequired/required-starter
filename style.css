@@ -13,17 +13,10 @@ Text Domain: requiredstarter
 
 /*
 	Make the template work
-
-    ATTENTION: Choose from CSS[1] or SCSS[2]
-    [1] @import url(../required-foundation/style.css);
-    [2] @import url(stylesheets/app.css);
 */
-@import url(stylesheets/app.css);
-
-h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; font-weight: 300; }
-
-#site-title { font-weight: 600; }
-
-.required-header .inline-list {
-	margin-top: 14px;
-}
+@import url(../required-foundation/style.css);
+/* ---------------------------------------------------
+   Only write stuff below this line, if you don't
+   use the Compass/SCSS version of Foundation and
+   prefer vanilla CSS.
+--------------------------------------------------- */
