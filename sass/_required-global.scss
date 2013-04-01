@@ -10,6 +10,13 @@
     }
 } // end List
 
+.entry-content, aside {
+    ul.clearing-thumbs {
+        list-style: none;
+        margin-left: 0;
+    }
+}
+
 // Pagination: The mixin isn't flexible enough
 ul.page-numbers {
     display: block;
@@ -64,10 +71,10 @@ abbr, acronym, dfn {
 }
 .entry-meta,
 .page-link {
-    clear: both;
+    @include clearfix;
 }
 .nav-single {
-    clear: both;
+    @include clearfix;
     line-height: 2;
     overflow: hidden;
 }
@@ -87,46 +94,35 @@ div.attachment { text-align: center; }
 .format-quote .entry-meta h6,
 .format-status .entry-meta h6,
 .sticky .entry-meta h6 { display: inline-block; }
-.entry-meta .label { float: right; text-transform: uppercase; margin: 15px 0; font-style: italic; }
+.entry-meta .label { float: right; text-transform: uppercase; margin: emCalc( 15px ) 0; font-style: italic; }
 
-.format-status .entry-header img { float: left; margin: 5px 15px 0 0; }
+.format-status .entry-header img { float: left; margin: emCalc( 5px ) emCalc( 15px ) 0 0; }
 
 .format-link .entry-content a {
     font-size: emCalc( 24px );
     line-height: 1;
 }
 
-/* ---------------------------------------------------
-   Make foundation work with WordPress
---------------------------------------------------- */
-
-#supplementary {
-    padding-top: 20px;
-}
+#supplementary,
 #footer {
-    padding-top: 20px;
+    padding-top: emCalc( 20px );
 }
+
 footer > div.row:last-child {
-    margin-top: 80px;
+    margin-top: emCalc( 80px );
     border-top: solid 1px #E6E6E6;
-    padding-top: 20px;
+    padding-top: emCalc( 20px );
 }
 footer > div.row:first-child {
-    margin-bottom: -80px;
-    padding-top: 20px;
-}
-.required-header .header-img {
-    display: block;
-    margin: 30px 0;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #E6E6E6;
+    margin-bottom: emCalc( -80px );
+    padding-top: emCalc( 20px );
 }
 .entry-meta {
     font-size: emCalc( 14px );
 }
 article footer.entry-meta {
-    margin: 30px 0;
-    padding-bottom: 30px;
+    margin: emCalc( 30px ) 0;
+    padding-bottom: emCalc( 30px );
     border-bottom: 1px solid #E6E6E6;
 }
 article:last-child footer.entry-meta {
@@ -137,9 +133,9 @@ table {
 }
 ol.commentlist { margin-left: 0; }
 .commentlist li { list-style: none; }
-article.comment { margin: 30px 0; }
+article.comment { margin: emCalc( 30px ) 0; }
 .comment-meta img { float: left; margin: 5px 10px 5px 0; }
-#comment { min-height: 120px; }
+#comment { min-height: emCalc( 120px ); }
 
 /* Off canvas layout stuff */
 .off-canvas [role="main"]:before {
@@ -151,15 +147,21 @@ article.comment { margin: 30px 0; }
 .js .off-canvas [role="main"] {
     background: transparent;
 }
-@media all and (min-width: 768px) {
-    .js .off-canvas [role="complementary"] { width: 20%; margin-top: 14px; }
-    .js .off-canvas [role="main"] { width: 80%; }
+
+body.off-canvas.admin-bar {
+    padding-top: emCalc( 28px );
 }
 
-@media handheld, only screen and (max-width: 767px) {
-    .sidebar-menu { border-bottom: 1px solid #ddd; position: relative; }
-    .off-canvas .menu-action { float: left; position: relative; top: 1px; margin-top: 0; padding-left: 15px; }
-    .off-canvas .menu-action .button.small { padding: 8px; margin: 0; }
-    .off-canvas .menu-action .button.small svg { opacity: 0.5; }
-    .js .off-canvas [role="complementary"] { margin-top: 0; }
+/**
+ * Off Canvas specific layout
+ */
+.sidebar-menu { border-bottom: 1px solid #ddd; position: relative; }
+.off-canvas .menu-action { float: left; position: relative; top: 1px; margin-top: 0; padding-left: emCalc( 15px ); }
+.off-canvas .menu-action .button.small { padding: 8px; margin: 0; }
+.off-canvas .menu-action .button.small svg { opacity: 0.5; }
+.js .off-canvas [role="complementary"] { margin-top: 0; }
+
+@media #{$small} {
+    .js .off-canvas [role="complementary"] { width: 20%; margin-top: emCalc( 14px ); }
+    .js .off-canvas [role="main"] { width: 80%; }
 }
