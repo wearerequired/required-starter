@@ -89,6 +89,7 @@ function required_starter_scripts() {
 	 * This is the proper code to add google fonts
 	 * as seen in TwentyTwelve
 	 */
+	/*
 	$protocol = is_ssl() ? 'https' : 'http';
 	$query_args = array( 'family' => 'Open+Sans:300,600' );
 	wp_enqueue_style(
@@ -97,6 +98,7 @@ function required_starter_scripts() {
 		array(),
 		null
 	);
+	*/
 }
 add_action('wp_enqueue_scripts', 'required_starter_scripts');
 

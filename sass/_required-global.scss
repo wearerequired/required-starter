@@ -137,6 +137,11 @@ article.comment { margin: emCalc( 30px ) 0; }
 .comment-meta img { float: left; margin: 5px 10px 5px 0; }
 #comment { min-height: emCalc( 120px ); }
 
+.comment-reply {
+    float: right;
+    margin-top: emCalc( -24px );
+}
+
 /* Off canvas layout stuff */
 .off-canvas [role="main"]:before {
     background: transparent;
