@@ -42,59 +42,28 @@
 	<div id="container" class="container" role="document">
 		<?php
 			/**
-			 * Include the Foundation Top Bar
-			 *
-			 * It uses the same navigation as nav.php
-			 * so you might want to use a different navigation
-			 * here.
+			 * Include the main navigation
 			 */
-			if ( is_page_template( 'page-templates/off-canvas-page.php' ) ) {
-				get_template_part('nav', 'top-bar');
-			}
+			get_template_part( 'nav' );
 		?>
 
 		<!-- Row for blog navigation -->
 		<div class="row">
-			<header class="twelve columns required-header" role="banner">
+			<header class="large-12 columns required-header" role="banner">
 				<div class="row">
-					<hgroup class="eight columns">
+					<hgroup class="large-8 columns">
 						<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
 						<h4 id="site-description" class="subheader"><?php bloginfo( 'description' ); ?></h4>
 					</hgroup>
-					<div class="four columns">
+					<div class="large-4 columns">
 						<?php wp_nav_menu( array(
 							'theme_location' => 'meta',
 							'container' => false,
 							'menu_class' => 'inline-list right',
 							'fallback_cb' => false
 						) ); ?>
-						<?php
-							/**
-							 * Search form
-							 *
-							 * If you need the search form just remove the //
-							 * infront of the following statement.
-							 *
-							 */
-							//get_search_form();
-						?>
 					</div>
 				</div>
-				<?php
-					/**
-					 * Include the default navigation
-					 *
-					 * You could easily do something like:
-					 * if ( is_front_page() ) {
-					 * 	get_template_part( 'nav', 'front-page' ); // nav-front-page.php
-					 * } else {
-					 * 	get_template_part( 'nav' );	// nav.php
-					 * }
-					 */
-					if ( ! is_page_template( 'page-templates/off-canvas-page.php' ) ) {
-						get_template_part( 'nav' );
-					}
-				?>
 
 				<?php
 					/**
@@ -104,5 +73,6 @@
 					 */
 					get_template_part( 'custom-header' );
 				?>
+				<hr />
 			</header>
 		</div><!-- // header.php -->

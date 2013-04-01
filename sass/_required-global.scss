@@ -1,0 +1,165 @@
+// Comment Submit: Make the submit button work
+#submit {
+    @include button();
+} // end Comment Submit
+
+// List: Default margin
+.entry-content, aside {
+    ul, ol {
+        margin-left: emCalc( $em-base );
+    }
+} // end List
+
+// Pagination: The mixin isn't flexible enough
+ul.page-numbers {
+    display: block;
+    height: $pagination-height;
+    margin-#{$default-float}: $pagination-margin;
+
+    li {
+      display: block;
+      float: $pagination-li-float;
+      height: $pagination-li-height;
+      color: $pagination-li-font-color;
+      font-size: $pagination-li-font-size;
+      margin-#{$default-float}: $pagination-li-margin;
+
+        a {
+            display: block;
+            padding: $pagination-link-pad;
+            color: $pagination-link-font-color;
+        }
+
+        &:hover a,
+        a:focus { background: $pagination-link-active-bg; }
+
+        span.current {
+            background: $pagination-link-current-background;
+            color: $pagination-link-current-font-color;
+            font-weight: $pagination-link-current-font-weight;
+            cursor: $pagination-link-current-cursor;
+            display: block;
+            padding: $pagination-link-pad;
+
+            &:hover,
+            &:focus { background: $pagination-link-current-active-bg; }
+        }
+    }
+} // end Pagination
+
+abbr, acronym, dfn {
+    cursor: help;
+    border-bottom: 1px dotted #e6e6e6;
+}
+.alignleft{
+    float: left;
+    margin: 5px 15px 5px 0;
+}
+.alignright {
+    float: right;
+    margin: 5px 0 5px 15px;
+}
+.aligncenter {
+    text-align: center;
+}
+.entry-meta,
+.page-link {
+    clear: both;
+}
+.nav-single {
+    clear: both;
+    line-height: 2;
+    overflow: hidden;
+}
+.nav-previous {
+    float: left;
+    width: 50%;
+}
+.nav-next {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+div.attachment { text-align: center; }
+
+.format-image .entry-meta h6,
+.format-link .entry-meta h6,
+.format-quote .entry-meta h6,
+.format-status .entry-meta h6,
+.sticky .entry-meta h6 { display: inline-block; }
+.entry-meta .label { float: right; text-transform: uppercase; margin: 15px 0; font-style: italic; }
+
+.format-status .entry-header img { float: left; margin: 5px 15px 0 0; }
+
+.format-link .entry-content a {
+    font-size: emCalc( 24px );
+    line-height: 1;
+}
+
+/* ---------------------------------------------------
+   Make foundation work with WordPress
+--------------------------------------------------- */
+
+#supplementary {
+    padding-top: 20px;
+}
+#footer {
+    padding-top: 20px;
+}
+footer > div.row:last-child {
+    margin-top: 80px;
+    border-top: solid 1px #E6E6E6;
+    padding-top: 20px;
+}
+footer > div.row:first-child {
+    margin-bottom: -80px;
+    padding-top: 20px;
+}
+.required-header .header-img {
+    display: block;
+    margin: 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.entry-meta {
+    font-size: emCalc( 14px );
+}
+article footer.entry-meta {
+    margin: 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E6E6E6;
+}
+article:last-child footer.entry-meta {
+    border-bottom: none;
+}
+table {
+    width: 100%;
+}
+ol.commentlist { margin-left: 0; }
+.commentlist li { list-style: none; }
+article.comment { margin: 30px 0; }
+.comment-meta img { float: left; margin: 5px 10px 5px 0; }
+#comment { min-height: 120px; }
+
+/* Off canvas layout stuff */
+.off-canvas [role="main"]:before {
+    background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.js .off-canvas [role="main"] {
+    background: transparent;
+}
+@media all and (min-width: 768px) {
+    .js .off-canvas [role="complementary"] { width: 20%; margin-top: 14px; }
+    .js .off-canvas [role="main"] { width: 80%; }
+}
+
+@media handheld, only screen and (max-width: 767px) {
+    .sidebar-menu { border-bottom: 1px solid #ddd; position: relative; }
+    .off-canvas .menu-action { float: left; position: relative; top: 1px; margin-top: 0; padding-left: 15px; }
+    .off-canvas .menu-action .button.small { padding: 8px; margin: 0; }
+    .off-canvas .menu-action .button.small svg { opacity: 0.5; }
+    .js .off-canvas [role="complementary"] { margin-top: 0; }
+}

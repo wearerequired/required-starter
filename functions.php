@@ -39,14 +39,9 @@ function required_starter_after_parent_theme_setup() {
 	 * I'm not sure if it's a bug in WordPress or my
 	 * bad I'll leave it here: http://wordpress.org/support/topic/undefined-index-custom_image_header-in-after_setup_theme-of-child-theme
 	 */
-	if ( ! isset( $GLOBALS['custom_image_header'] ) )
-		$GLOBALS['custom_image_header'] = array();
 
 	if ( ! isset( $GLOBALS['custom_background'] ) )
 		$GLOBALS['custom_background'] = array();
-
-	// Remove custom header support: http://codex.wordpress.org/Custom_Headers
-	//remove_theme_support( 'custom-header' );
 
 	// Remove support for post formats: http://codex.wordpress.org/Post_Formats
 	//remove_theme_support( 'post-formats' );
@@ -121,7 +116,7 @@ function required_continue_reading_link() {
 /**
  * Overwrite the defaults of the Orbit shortcode script
  *
- * Accepts all the parameters from http://foundation.zurb.com/docs/orbit.php#optCode
+ * Accepts all the parameters from http://foundation.zurb.com/docs/components/orbit.html
  * to customize the options for the orbit shortcode plugin.
  *
  * @param  array $args default args
@@ -129,8 +124,7 @@ function required_continue_reading_link() {
  */
 function required_orbit_script_args( $defaults ) {
 	$args = array(
-		'animation' 	=> 'fade',
-		'advanceSpeed' 	=> 8000,
+		'timer_speed' 	=> 8000,
 	);
 	return wp_parse_args( $args, $defaults );
 }
