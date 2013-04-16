@@ -52,7 +52,7 @@
 			<header class="large-12 columns required-header" role="banner">
 				<div class="row">
 					<hgroup class="large-8 columns">
-						<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
+						<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span></a></h1>
 						<h4 id="site-description" class="subheader"><?php bloginfo( 'description' ); ?></h4>
 					</hgroup>
 					<div class="large-4 columns">
@@ -64,15 +64,5 @@
 						) ); ?>
 					</div>
 				</div>
-
-				<?php
-					/**
-					 * Include our custom-header.php
-					 *
-					 * Used with the header image stuff.
-					 */
-					get_template_part( 'custom-header' );
-				?>
-				<hr />
 			</header>
 		</div><!-- // header.php -->

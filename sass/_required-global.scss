@@ -6,7 +6,7 @@
 // List: Default margin
 .entry-content, aside {
     ul, ol {
-        margin-left: emCalc( $em-base );
+        margin-left: emCalc( $em-base/100*150 );
     }
 } // end List
 
